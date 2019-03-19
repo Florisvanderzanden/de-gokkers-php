@@ -3,19 +3,22 @@
 ?>
 
 <!-- Even heel easy html code, omdat de focus nu op het inlogsysteem ligt en niet op fancy looks :)  -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Amo Login System homepage</title>
-    <style>
-        nav {
-            display: flex;
-            justify-content: flex-end;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>De Gokkers PHP</title>
+    <link rel="stylesheet" href="website.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
 <body>
 <header>
-    <nav>
+    <div class="container">
+        <h1>De Gokkers PHP</h1>
+        <nav>
+            <a href="index.php">Download</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Registreer</a>
         <?php
         /*
          * Hier checken we of we al ooit eens een 'id' key hebben opgeslagen in de
@@ -26,11 +29,14 @@
          * klanten zich nogmaals kunnen registreren of inloggen...
          *
          */
-        if ( isset($_SESSION['id']) ) {
-            echo "You are currently logged in. Want to <a href='register.php'>logout?</a>";
-        } else {
-            echo "<a href='login.php'>Login</a> &nbsp; or &nbsp; <a href='register.php'> register </a>";
-        }
+        /* if ( isset($_SESSION['id']) ) {
+         *   echo "You are currently logged in. Want to <a href='register.php'>logout?</a>";
+         * } else {
+         *   echo "<a href='login.php'>Login</a> &nbsp; or &nbsp; <a href='register.php'> register </a>";
+         * }*/
         ?>
-    </nav>
+        </nav>
+    </div>
 </header>
+<main>
+    <div class="container">

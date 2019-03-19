@@ -1,7 +1,13 @@
 <?php require 'header.php'; ?>
 
-   <h1>Welcome to AMO Login system Home Page! </h1>
-   <p>Nothing special to see here but that's not the point.</p>
-   <p>Try going to the ultra secret ultimate vip <a href='admin.php'> admin </a> page without logging in first</p>
+    <div class="download">
+        <div class="download-left">
+            <h2>Downloaden</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, ex. Eveniet reiciendis repudiandae ratione, quidem possimus distinctio hic enim id? Nostrum quis mollitia beatae odio, id quisquam praesentium. Saepe, quis.</p>
+        </div>
+        <div class="download-right">
+            <input type="button" id="download-button" value="Downloaden">
+        </div>
+    </div>
 
 <?php require 'footer.php'; ?>

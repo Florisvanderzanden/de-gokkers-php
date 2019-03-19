@@ -56,6 +56,7 @@ nav a:hover {
 }
 
 /*=====Main=====*/
+/*=====Index=====*/
 .download {
 	height: 550px;
 	align-items: center;
@@ -76,6 +77,36 @@ nav a:hover {
 	transition: 0.5s;
 	background-color: #7D70BA;
 }
+/*=====Login=====*/
+.login-form {
+	width: 250px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: #7D70BA;
+	padding: 50px;
+	border: 0  solid;
+	border-radius: 50px;
+	display: flex;
+	height: 250px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.form-group {
+	display: flex;
+	justify-content: space-between;
+}
+.submit {
+	width: 100%;
+	background-color: #ffffff;
+	font-size: 20px;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 2px solid #ffffff;
+	border-radius: 50px;
+}
+/*=====Register=====*/
 
 /*=====Footer=====*/
 footer {
