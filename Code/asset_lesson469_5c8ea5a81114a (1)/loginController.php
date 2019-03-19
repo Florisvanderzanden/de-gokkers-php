@@ -1,11 +1,5 @@
 <?php
 
-/*
- * Dit is een webserver only script, waar je alleen mag komen als je via een form
- * data verstuurd, en niet als je via de url hier naar toe komt. Iedereen die dat doet
- * sturen we terug naar index.php
- *
- */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' ) {
     header('location: index.php');
     exit;
@@ -43,6 +37,17 @@ if ($_POST['type'] === 'register') {
      *
      *
      */
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password_confirm = $_POST['password_confirm'];
+
+    echo $username;
+    echo $email;
+    echo $password;
+    echo $password_confirm;
+
+    $query = "SELECT email, password FROM login-example WHERE email = '$email'";
 
     exit;
 }
