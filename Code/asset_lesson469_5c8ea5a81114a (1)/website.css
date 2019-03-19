@@ -1,0 +1,90 @@
+/*=====Algemeen=====*/
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+h1 {
+	align-self: center;
+}
+h2 {
+	font-size: 40px;
+}
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/*=====Header=====*/
+header {
+	background-color: #343633;
+	color: #ffffff;
+}
+header .container {
+	display: flex;
+	height: 75px;
+	justify-content: space-between;
+}
+nav {
+	width: 50%;
+	align-self: center;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+}
+nav a {
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 2px solid #343633;
+	border-radius: 50px;
+	transition: 0.5s;
+	background-color: #343633;
+}
+nav a:hover {
+	border: 2px solid black;
+	background-color: black;
+	transition: 0.5s;
+}
+
+/*=====Main=====*/
+.download {
+	height: 550px;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+.download h2 {
+	margin-bottom: 20px;
+}
+.download input {
+	font-size: 30px;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 2px solid #7D70BA;
+	border-radius: 50px;
+	transition: 0.5s;
+	background-color: #7D70BA;
+}
+
+/*=====Footer=====*/
+footer {
+	background-color: #343633;
+	color: #ffffff;
+	letter-spacing: 2px;
+	height: 50px;
+}
+footer .container p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
