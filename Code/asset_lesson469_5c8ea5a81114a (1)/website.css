@@ -107,7 +107,20 @@ nav a:hover {
 	border-radius: 50px;
 }
 /*=====Register=====*/
-
+.register-form {
+	width: 250px;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: #7D70BA;
+	padding: 50px;
+	border: 0  solid;
+	border-radius: 50px;
+	display: flex;
+	height: 250px;
+	flex-direction: column;
+	justify-content: space-between;
+}
 /*=====Footer=====*/
 footer {
 	background-color: #343633;
