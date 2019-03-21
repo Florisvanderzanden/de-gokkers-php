@@ -28,8 +28,8 @@ if ($_POST['type'] === 'register') {
      * Hier komen we als we de register form data versturen
      * things to do:
      *
-     * 1. Checken of er al iemand met dit emailadres of username bestaat
-     * 2. Indien nee, eerst checken of de password en password_confirm inderdaad hetzelfde ingevoerde is.
+     *
+     *
      * 3. Dan gebruiker inserten in de database, zodat deze kan gaan inloggen.
      * 4. Gebruiker doorsturen naar de nieuwe inlog pagina.
      *
@@ -44,12 +44,25 @@ if ($_POST['type'] === 'register') {
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
+    $msg = "";
+
     $sql = "SELECT * FROM gebruikers WHERE email = '$email'";
     $query = $db->query($sql);
     $gebruiker = $query->fetch();
 
     if( $gebruiker['email'] == $email ){
         $msg = "Dit E-mailadres is al in gebruik!";
+    }
+
+    if( $msg == "" && $password == ""){
+        $msg = "Wachtwoord verplicht";
+    }
+
+    if($msg == "" && $password != $password_confirm){
+        $msg = "Wachtwoord moet hetzelfde zijn";
+    }
+
+    if( $msg != ""){
         header( "Location: register.php?msg=$msg");
     }
 
