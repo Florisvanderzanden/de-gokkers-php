@@ -1,5 +1,7 @@
 <?php
 
+require 'config.php';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' ) {
     header('location: index.php');
     exit;
@@ -22,7 +24,6 @@ if ( $_POST['type'] === 'login' ) {
 }
 
 if ($_POST['type'] === 'register') {
-    var_dump($_POST);
     /*
      * Hier komen we als we de register form data versturen
      * things to do:
@@ -37,17 +38,17 @@ if ($_POST['type'] === 'register') {
      *
      *
      */
+
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
-    echo $username;
-    echo $email;
-    echo $password;
-    echo $password_confirm;
+    $sql = "SELECT email, password FROM login-example WHERE email = '$email'";
+    $query = $db->query($sql);
+    $email_uitdatabase = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    $query = "SELECT email, password FROM login-example WHERE email = '$email'";
+    echo $email_uitdatabase;
 
     exit;
 }
