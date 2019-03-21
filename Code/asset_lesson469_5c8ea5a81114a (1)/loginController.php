@@ -44,11 +44,14 @@ if ($_POST['type'] === 'register') {
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
-    $sql = "SELECT email, password FROM login-example WHERE email = '$email'";
+    $sql = "SELECT * FROM gebruikers WHERE email = '$email'";
     $query = $db->query($sql);
-    $email_uitdatabase = $query->fetchAll(PDO::FETCH_ASSOC);
+    $gebruiker = $query->fetch();
 
-    echo $email_uitdatabase;
+    if( $gebruiker['email'] == $email ){
+        $msg = "Dit E-mailadres is al in gebruik!";
+        header( "Location: register.php?msg=$msg");
+    }
 
     exit;
 }
