@@ -8,23 +8,28 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' ) {
 }
 
 if ( $_POST['type'] === 'login' ) {
-    var_dump($_POST);
-    /*
-     * Hier komen we als we de login form data versturen.
-     * things to do:
-     * 1. Checken of gebruikersnaam EN email in de database bestaat met de ingevoerde data
-     * 2. Indien ja, een $_SESSION['id'] vullen met de id van de persoon die probeert in te loggen.
-     * 3. gebruiker doorsturen naar de admin pagina
-     *
-     * 3. Indien nee, gebruiker terugsturen naar de login pagina met de melding dat gebruikersnaam en/of
-     * wachtwoord niet in orde is.
-     *
-     */
 
+    //zet ingevulde gegevens in makkelijjke variable
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    
+    $msg = "";
+
+    $sql = "SELECT * FROM gebruikers WHERE email = '$email' AND password = '$password'";
+    $query = $db->query($sql);
+    $gebruiker = $query->fetch();
+
+
+    if ( $gebruiker['email'] == $email && $gebruiker['password'] == $password ){
+        //een $_SESSION['id'] vullen met de id van de persoon die probeert in te loggen
+        //gebruiker doorsturen naar de admin pagina
+    }
+
+    //Als email en password niet in de database voorkomen, word teruggestuurd
+    if ( $gebruiker['email'] != $email && $gebruiker['password'] != $password ){
+        $msg = "Email en/of wachtwoord is niet in orde";
+        header("Location: login.php?msg=$msg");
+    }
 
     exit;
 }
