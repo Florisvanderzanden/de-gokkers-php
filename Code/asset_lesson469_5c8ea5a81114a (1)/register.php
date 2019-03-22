@@ -2,6 +2,12 @@
 require 'header.php';
 ?>
 
+<?php
+if ( isset( $_GET['msg'] )) {
+    echo "<p>{$_GET['msg']}</p>";
+}
+?>
+
 <form class="register-form" action="loginController.php" method="post">
     <input type="hidden" name="type" value="register">
     <div class="form-group">
@@ -19,11 +25,10 @@ require 'header.php';
         <input type="password" name="password_confirm" id="password_confirm">
     </div>
 
-    <?php
-        if ( isset( $_GET['msg'] )) {
-            echo "<p>{$_GET['msg']}</p>";
-        }
-    ?>
+    <div class="form-group">
+        <label for="accept">Accepteer de algemene voorwaarden</label>
+        <input type="radio" name="accept" id="accept">
+    </div>
 
     <input class="submit" type="submit" value="Register">
 </form>
