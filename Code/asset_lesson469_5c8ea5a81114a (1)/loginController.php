@@ -21,8 +21,16 @@ if ( $_POST['type'] === 'login' ) {
 
 
     if ( $gebruiker['email'] == $email && $gebruiker['password'] == $password ){
-        //TODO: een $_SESSION['id'] vullen met de id van de persoon die probeert in te loggen
-        //TODO: gebruiker doorsturen naar de admin pagina
+        //session start
+        session_start();
+
+        //Session variable worden gevuld
+        $_SESSION['id'] = $gebruiker['id'];
+        $_SESSION['email'] = $gebruiker['email'];
+        $_SESSION['password'] = $gebruiker['password'];
+
+        //Word doorgestuurd naar de download pagina
+        header("Location: index.php");
     }
 
     //Als email en password niet in de database voorkomen, word teruggestuurd

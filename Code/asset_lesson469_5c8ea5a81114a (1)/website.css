@@ -56,6 +56,14 @@ nav a:hover {
 }
 
 /*=====Main=====*/
+main {
+	background-image: url("renbaan (2) - tiny.png");
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-blend-mode: 
+	background-position: center;
+}
 /*=====Index=====*/
 .download {
 	height: 550px;
