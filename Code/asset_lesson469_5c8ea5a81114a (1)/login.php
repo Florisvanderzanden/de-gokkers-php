@@ -1,5 +1,11 @@
 <?php require 'header.php'; ?>
 
+<?php
+if ( isset( $_GET['msg'] )) {
+    echo "<p>{$_GET['msg']}</p>";
+}
+?>
+
 <form class="login-form" action="logincontroller.php" method="post">
     <input type="hidden" name="type" value="login">
     <div class="form-group">

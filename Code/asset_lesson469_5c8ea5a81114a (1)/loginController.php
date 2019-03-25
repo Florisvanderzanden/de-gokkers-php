@@ -19,8 +19,7 @@ if ( $_POST['type'] === 'login' ) {
     $query = $db->query($sql);
     $gebruiker = $query->fetch();
 
-
-    if ( $gebruiker['email'] == $email && $gebruiker['password'] == $password ){
+    if ( $gebruiker['email'] == $email && password_verify($password, $gebruiker['password']) ){
         //session start
         session_start();
 
@@ -32,9 +31,7 @@ if ( $_POST['type'] === 'login' ) {
         //Word doorgestuurd naar de download pagina
         header("Location: index.php");
     }
-
-    //Als email en password niet in de database voorkomen, word teruggestuurd
-    if ( $gebruiker['email'] != $email && $gebruiker['password'] != $password ){
+    else{
         $msg = "Email en/of wachtwoord is niet in orde";
         header("Location: login.php?msg=$msg");
     }

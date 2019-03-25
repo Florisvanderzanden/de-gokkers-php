@@ -1,5 +1,11 @@
 <?php require 'header.php'; ?>
 
+<?php
+if( isset($_SESSION['id']) ){
+    echo "<p>Boeie Ruurd</p>";
+}
+?>
+
     <div class="download">
         <div class="download-left">
             <h2>Downloaden</h2>
@@ -8,9 +14,6 @@
         <div class="download-right">
             <form class="download-form" action="loginController.php" method="post">
                 <input type="button" id="download-button" value="Downloaden">
-                <?php
-
-                ?>
             </form>
         </div>
     </div>
