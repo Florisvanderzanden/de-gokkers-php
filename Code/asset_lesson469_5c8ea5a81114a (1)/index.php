@@ -4,6 +4,9 @@
 if( isset($_SESSION['id']) ){
     echo "<p>Boeie Ruurd</p>";
 }
+else{
+    echo "<p>Niet zo boeie ruurd</p>";
+}
 ?>
 
     <div class="download">

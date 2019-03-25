@@ -15,13 +15,11 @@ if ( $_POST['type'] === 'login' ) {
 
     $msg = "";
 
-    $sql = "SELECT * FROM gebruikers WHERE email = '$email' AND password = '$password'";
+    $sql = "SELECT * FROM gebruikers WHERE email = '$email'";
     $query = $db->query($sql);
     $gebruiker = $query->fetch();
 
-    $unhashed_password = password_verify($password, $gebruiker['password']);
-
-    if ( $gebruiker['email'] == $email && $unhashed_password == true ){
+    if (password_verify($password, $gebruiker['password'])){
         //session start
         session_start();
 
