@@ -26,7 +26,7 @@ if ( isset( $_GET['msg'] )) {
     </div>
 
     <div class="form-group">
-        <label for="accept">Accepteer de algemene voorwaarden</label>
+        <label for="accept">Accepteer de <a href="algemenevoorwaarden.php">algemene voorwaarden</a></label>
         <input type="radio" name="accept" id="accept">
     </div>
 
