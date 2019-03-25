@@ -13,7 +13,7 @@ if( isset($_SESSION['id']) ){
         </div>
         <div class="download-right">
             <form class="download-form" action="loginController.php" method="post">
-                <input type="button" id="download-button" value="Downloaden">
+                <a href="degokkers.php">Download</a>
             </form>
         </div>
     </div>

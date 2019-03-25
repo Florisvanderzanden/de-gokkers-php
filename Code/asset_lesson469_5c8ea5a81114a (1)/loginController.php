@@ -19,7 +19,9 @@ if ( $_POST['type'] === 'login' ) {
     $query = $db->query($sql);
     $gebruiker = $query->fetch();
 
-    if ( $gebruiker['email'] == $email && password_verify($password, $gebruiker['password']) ){
+    $unhashed_password = password_verify($password, $gebruiker['password']);
+
+    if ( $gebruiker['email'] == $email && $unhashed_password == true ){
         //session start
         session_start();
 
