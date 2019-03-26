@@ -64,3 +64,5 @@ try {
  * wie er is ingelogd. Hier maken we in deze applicatie gebruik van.
  *
  */
+
+session_start();

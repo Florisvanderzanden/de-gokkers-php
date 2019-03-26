@@ -20,16 +20,7 @@ if ( $_POST['type'] === 'login' ) {
     $gebruiker = $query->fetch();
 
     if (password_verify($password, $gebruiker['password'])){
-        //session start
-        session_start();
-
-        //Session variable worden gevuld
-        $_SESSION['id'] = $gebruiker['id'];
-        $_SESSION['email'] = $gebruiker['email'];
-        $_SESSION['password'] = $gebruiker['password'];
-
-        //Word doorgestuurd naar de download pagina
-        header("Location: index.php");
+        header("Location: download.php");
     }
     else{
         $msg = "Email en/of wachtwoord is niet in orde";

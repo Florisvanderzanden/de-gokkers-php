@@ -11,7 +11,7 @@ require 'header.php';
         </div>
         <div class="download-right">
             <form class="download-form" action="loginController.php" method="post">
-                <a class="download-button" href="login.php">Download</a>
+                <a class="download-button" href="racetest.exe">Download</a>
             </form>
         </div>
     </div>
