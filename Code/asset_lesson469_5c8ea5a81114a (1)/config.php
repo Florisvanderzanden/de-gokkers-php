@@ -7,10 +7,10 @@
  */
 
 // Connectie met database zoals jullie gewend zijn...
-$dbHost = "localhost";
-$dbName = "gokkersphp";
-$dbUser = "root";
-$dbPass = "";
+$dbHost = "florisvanderzanden.nl";
+$dbName = "floribl307_gebruikers";
+$dbUser = "floribl307_floribl307";
+$dbPass = "Fdatabase0!";
 
 /*   misschien is de try catch block nieuw voor jullie
  *   de try catch block probeert om de code in de try scope uit te voeren.
